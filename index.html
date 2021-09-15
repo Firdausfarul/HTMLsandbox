@@ -16,8 +16,27 @@
                 alert("Gak onok cok asu");
             }
         }
+        const retrievePublicKey = async () => {
+            let publicKey = "";
+            let error = "";
+
+            try {
+                publicKey = await window.freighterApi.getPublicKey();
+            } catch (e) {
+                error = e;
+            }
+
+            if (error) {
+                return error;
+            }
+
+            return publicKey;
+            getElement('pubkey').innerHTML = 'Name: ' + publicKey;
+            };
+            
     </script>
 
-  <button type="button" onclick="bobo()">toad</button>
+  <button type="button" onclick="retrievePublicKey()">toad</button>
+  <p1 id='pubkey'></p1>
   </body>
 </html>
