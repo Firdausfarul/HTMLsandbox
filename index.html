@@ -29,11 +29,13 @@
             if (error) {
                 return error;
             }
-
+            alert(publicKey);
             return publicKey;
-            getElement('pubkey').innerHTML = 'Name: ' + publicKey;
             };
-            
+        function mumu(){
+            retrievePublicKey();
+            getElement('pubkey').innerHTML = 'Name: ' + publicKey;
+        }
     </script>
 
   <button type="button" onclick="retrievePublicKey()">toad</button>
